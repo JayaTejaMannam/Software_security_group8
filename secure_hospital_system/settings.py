@@ -195,3 +195,6 @@ MESSAGE_TAGS = {
 }
 
 BLOCKCHAINURL = "https://shsblockchain.pagekite.me"
+
+import django_heroku
+django_heroku.settings(locals())
