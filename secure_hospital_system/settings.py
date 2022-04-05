@@ -161,7 +161,7 @@ STATICFILES_DIRS = [
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-#SECRET_KEY="1SVnU2FwIRetsvdkDn+y/2UpyhfsumGgPuQP6rlJo9Y="
+SECRET_KEY="1SVnU2FwIRetsvdkDn+y/2UpyhfsumGgPuQP6rlJo9Y="
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'home'
