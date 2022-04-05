@@ -1,0 +1,50 @@
+
+{% extends 'Portal.html' %}
+{% load render_table from django_tables2 %}
+{% block content %}
+
+<div class="container" style="background-image: linear-gradient(rgba(255, 0, 0, 0.293), rgba(185, 241, 101, 0.499));">
+  <h1 style="text-align:center">Medical Records</h1>
+  <ul class="nav nav-pills">
+    <li class="active"><a data-toggle="tab" href="#labtestreports" style="background-image: linear-gradient(rgba(96, 200, 234, 0.293), rgba(251, 253, 249, 0.499));">Lab Tests Reports</a></li>
+    <li ><a data-toggle="tab" href="#appointments" style="background-image: linear-gradient(rgba(96, 200, 234, 0.293), rgba(251, 253, 249, 0.499));">Appointments</a></li>
+    <li><a data-toggle="tab" href="#prescriptions" style="background-image: linear-gradient(rgba(96, 200, 234, 0.293), rgba(251, 253, 249, 0.499));">Prescriptions</a></li>
+    <li><a data-toggle="tab" href="#diagnoses" style="background-image: linear-gradient(rgba(96, 200, 234, 0.293), rgba(251, 253, 249, 0.499));">Diagnoses</a></li>
+    <li><a data-toggle="tab" href="#paymentsandtransactions" style="background-image: linear-gradient(rgba(96, 200, 234, 0.293), rgba(251, 253, 249, 0.499));">Payments</a></li>
+  </ul>
+  {% csrf_token %}
+  <div class="tab-content">
+    <div id="appointments" class="tab-pane fade">
+      <h3 style="text-align:center">Appointments</h3>
+      {% render_table appointmentsTable %}
+    </div>
+    <div id="diagnoses" class="tab-pane fade">
+      <h3 style="text-align:center">Diagnosis</h3>
+      {% render_table diagnosesTable %}
+    </div>
+    <div id="labtestreports" class="tab-pane fade in active">
+      <h3 style="text-align:center">Lab Test Reports</h3>
+      {% render_table labTestReportsTable %}
+    </div>
+    <div id="prescriptions" class="tab-pane fade">
+      <h3 style="text-align:center">Prescriptions</h3>
+      {% render_table prescriptionsTable %}
+    </div>  
+    <div id="paymentsandtransactions" class="tab-pane fade">
+      <h3 style="text-align:center">Payments & Transactions</h3>
+      <form action = '/generateBills' method="post">
+        {% csrf_token %}
+        <input type="hidden" name="patient_id" value="{{ patient_id }}">
+        {% if isHospitalStaff %}
+        <button class="btn btn-primary" type="submit">Generate Bills</button>
+        {% endif %}
+    </form>
+    <div>
+      {% render_table paymentsTable %}
+    </div>
+      
+      <p></p>
+    </div>
+  </div>
+</div>
+{% endblock %}

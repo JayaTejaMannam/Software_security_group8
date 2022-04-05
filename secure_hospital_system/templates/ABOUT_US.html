@@ -1,0 +1,205 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Secure Hospital Systems</title>
+	<style>
+	.carousel-caption {
+  bottom: 350px;
+}
+.btn{
+	  
+	 
+	  border-radius:0;
+	  padding : 0.5rem 1.5rem;
+	  font-size:1rem;
+	  margin-top:1.5px;
+    font-family:Centaur;
+    font-size: 19px !important;
+    letter-spacing: 2px;
+	  
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #605a59;
+    z-index: 9999;
+    border: 0;
+    font-size: 19px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 2px;
+    border-radius: 0;
+    font-family:Centaur;
+
+}
+
+.navbarr {
+    margin-bottom: 0;
+    background-color: #9f5f77;
+    z-index: 9999;
+    border: 0;
+    font-size: 50px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 2px;
+    border-radius: 0;
+    font-family:Centaur;
+
+}
+.nav li.x a {
+  color: rgb(183, 226, 202) !important;
+  background-color: #a45bc8 !important;
+  
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: #3333ff !important;
+}
+.navbar-nav.navbar-default {
+   position:fixed; top:50; left:0; z-index:1030;
+ }
+.nav a {
+  color: red;
+  -webkit-transition: all 0.08s linear;
+  -moz-transition: all 0.08s linear;
+  -o-transition: all 0.08s linear;
+  transition: all 0.08s linear;
+  padding : 0.5rem 1.5rem;
+}
+
+.carousel-inner h2 {
+  font-size: 35px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 25px;
+  color:black;
+  font-color: black;
+  
+}
+
+.carousel-inner p {
+  width: 75%;
+  margin: auto;
+  font-size: 15px;
+  line-height: 1;
+  color: black;
+
+}
+
+.corousal-inner{
+     margin-top:25px; 
+}
+.logo {
+  font-size: 100px;
+}
+#a
+{
+position:absolute;
+top:2px;
+left:2px;
+}
+</style>
+</head>
+<body>
+
+  <h1 align=center style="color: hsl(215, 92%, 44%);">NEWLIFE HOSPITAL</h1>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="home">HOME</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="bookAppointment"> BOOK APPOINTMENT
+              </a></li>
+          </ul>
+      
+          <ul class="nav navbar-nav navbar-left">
+            <li class="x"><a href="{% url 'login' %}"> LOGIN</a></li>
+              </ul>
+      </div>
+  </nav>
+<div style="background-color: hsl(100, 74%, 82%);">
+  <h2 align="center" ><u>ABOUT</u></h2>
+       <p>
+      <ul>
+       <li>
+         Our hospital has major campuses in Rochester, Minn.; Scottsdale and Phoenix, Ariz.; and Jacksonville, Fla. The Newlife Hospital Health System has dozens of locations in several states. Thousands of patients from around the world travel to Newlife Hospital locations, and Newlife Hospital's International Patient Offices help ensure that distance and language are not obstacles to receiving world-class care. </li>
+        </ul>
+        </p>
+       <h2 align="center"><u>Newlife Hospital Mission and Values</u></h2>
+       <p>
+        <ul>
+        <li>Mission: 
+        Inspiring hope and promoting health through integrated clinical practice, education and research.</li>
+        <br>
+        <li>Vision: 
+        Transforming medicine to connect and cure as the global authority in the care of serious or complex disease.</li>
+        <br>
+      <li>Primary value: 
+        The needs of the patient come first.</li>
+        <br>
+      <li>Value statements: 
+        These values, which guide Newlife Hospitals mission to this day, are an expression of the vision and intent of our founders, the original Newlife Hospitals physicians and the Sisters of Saint Francis.</li>
+        <br>
+      <li>Respect: 
+        Treat everyone in our diverse community, including patients, their families and colleagues, with dignity.</li>
+        <br>
+      <li>Integrity: 
+        Adhere to the highest standards of professionalism, ethics and personal responsibility, worthy of the trust our patients place in us.</li>
+        <br>
+      <li> Compassion
+        Provide the best care, treating patients and family members with sensitivity and empathy.</li>
+        <br>
+      <li>Healing
+        Inspire hope and nurture the well-being of the whole person, respecting physical, emotional and spiritual needs.</li>
+        <br>
+      <li>Teamwork
+        Value the contributions of all, blending the skills of individual staff members in unsurpassed collaboration.</li>
+        <br>
+      <li>Innovation
+        Infuse and energize the organization, enhancing the lives of those we serve, through the creative ideas and unique talents of each employee.</li>
+        <br>
+      <li>Excellence
+        Deliver the best outcomes and highest quality service through the dedicated effort of every team member.</li>
+        <br>
+      <li>Stewardship
+        Sustain and reinvest in our mission and extended communities by wisely managing our human, natural and material resources.  </li>
+        <br>
+      </ul>
+       </p>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" >
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item">
+            <a class="nav-link" href="contactUs" style="color:white">Contact Us</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+
+<script type="text/javascript">
+  (function(d, m){
+      var kommunicateSettings = 
+          {"appId":"fd42e99e86467e6860d2cba6dbae85a6","popupWidget":true,"automaticChatOpenOnNavigation":true};
+      var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+      s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+      var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+      window.kommunicate = m; m._globals = kommunicateSettings;
+  })(document, window.kommunicate || {});
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+</script>
+	 </body>
+  </html>

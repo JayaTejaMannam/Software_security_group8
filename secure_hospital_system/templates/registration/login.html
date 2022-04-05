@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+ 
+ <title>Login</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <!-- Required meta tags -->
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/css/index.css">
+ <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+	.carousel-caption {
+  bottom: 350px;
+}
+.btn{
+	  
+	 
+	  border-radius:0;
+	  padding : 0.5rem 1.5rem;
+	  font-size:1rem;
+	  margin-top:1.5px;
+    font-family:Centaur;
+    font-size: 19px !important;
+    letter-spacing: 2px;
+	  
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #605a59;
+    z-index: 9999;
+    border: 0;
+    font-size: 19px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 2px;  
+    border-radius: 0;
+    font-family:Centaur;
+
+}
+
+.navbarr {
+    margin-bottom: 0;
+    background-color: #9f5f77;
+    z-index: 9999;
+    border: 0;
+    font-size: 50px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 2px;
+    border-radius: 0;
+    font-family:Centaur;
+
+}
+.nav li.x a {
+  color: rgb(183, 226, 202) !important;
+  background-color: #a45bc8 !important;
+  
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: #3333ff !important;
+}
+.navbar-nav.navbar-default {
+   position:fixed; top:50; left:0; z-index:1030;
+ }
+.nav a {
+  color: red;
+  -webkit-transition: all 0.08s linear;
+  -moz-transition: all 0.08s linear;
+  -o-transition: all 0.08s linear;
+  transition: all 0.08s linear;
+  padding : 0.5rem 1.5rem;
+}
+
+
+
+.carousel-inner h2 {
+  font-size: 35px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 25px;
+  color:black;
+  font-color: black;
+  
+}
+
+.carousel-inner p {
+  width: 75%;
+  margin: auto;
+  font-size: 15px;
+  line-height: 1;
+  color: black;
+
+}
+
+.corousal-inner{
+     margin-top:25px; 
+}
+    .logo {
+        font-size: 100px;
+    }
+    /* body{padding-top:200px;} */
+    #a
+{
+position:absolute;
+top:2px;
+left:20%;
+}
+
+</style>
+</head>
+<body  style="background-image:url('../../static/pics/pic7.jpeg');">
+
+  <h1 align=center style="color: hsl(215, 92%, 44%);">NEWLIFE HOSPITAL</h1>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="../../home">HOME</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+
+     {% if form.errors %}
+     <p>Your username and password didn't match. Please try again.</p>
+     {% endif %}
+     <div class="container">
+        <div class="row">
+          <div class="row align-items-center justify-content-center" style="margin-left: 450px; margin-top: 100px;">
+                <div class="">
+                      <div class=" ">
+                        <h3 class="" style="color:rgb(201, 17, 17);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LOGIN HERE!</h3>
+                     </div>
+                     <div class="" style="color:rgb(5, 119, 160);">
+                       <form method="post" action="{% url 'login' %}" accept-charset="UTF-8" role="form">
+                         {% csrf_token %}
+                         <fieldset>
+                           <table>
+                             <tr>
+                               <td> {{ form.username.label_tag }}</td>
+                               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                               <td> {{ form.username }} </td>
+                             </tr>
+                             <tr>
+                               <td> {{ form.password.label_tag }} </td>
+                               <td></td>
+                               <td> {{ form.password }}</td><br/><br/>
+                             </tr>
+                           </table><br/><br/>
+                           <input  class="btn btn-lg btn-block btn-primary" style="color:rgb(244, 238, 245); font-size:100px;" type="submit" value="LOGIN">
+                           <input type="hidden" name="next" value="{{ next }}" />
+                        </fieldset>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      <!-- <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
+      <script src="../../static/js/simpleKeyboard.js"></script> -->
+    </body>
+</html>

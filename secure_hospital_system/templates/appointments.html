@@ -1,0 +1,23 @@
+{% extends 'Portal.html' %}
+{% load render_table from django_tables2 %}
+{% block content %}
+
+<div class="container" style="background-image: linear-gradient(rgba(255, 0, 0, 0.293), rgba(185, 241, 101, 0.499));">
+  <center><h1>Appointments</h1></center>
+  <ul class="nav nav-pills" >
+    <li class="active" ><a data-toggle="tab" href="#pastAppointments" style="background-image: linear-gradient(rgba(96, 200, 234, 0.293), rgba(251, 253, 249, 0.499));" >Past Appointments</a></li>
+    <li ><a data-toggle="tab" href="#upcomingAppointments" style="background-image: linear-gradient(rgba(96, 200, 234, 0.293), rgba(251, 253, 249, 0.499));">Upcoming Appointments</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="upcomingAppointments" class="tab-pane fade in active">
+      <h3><center>Upcoming Appointments</center></h3>
+      {% render_table upcomingAppointment %}
+    </div>
+    <div id="pastAppointments" class="tab-pane fade">
+      <h3><center>Past Appointments</center></h3>
+      {% render_table pastAppointment %}
+    </div>
+  </div>
+</div>
+{% endblock %}
